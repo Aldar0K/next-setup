@@ -1,5 +1,7 @@
-import { makeStore } from '@/shared/store';
-import { ReactNode } from 'react';
+'use client';
+
+import { AppStore, makeStore } from '@/shared/store';
+import { ReactNode, useRef } from 'react';
 import { Provider } from 'react-redux';
 
 type StoreProviderProps = {
@@ -8,7 +10,10 @@ type StoreProviderProps = {
 
 export const StoreProvider = (props: StoreProviderProps) => {
   const { children } = props;
-  const store = makeStore();
+  const storeRef = useRef<AppStore>();
+  if (!storeRef.current) {
+    storeRef.current = makeStore();
+  }
 
-  return <Provider store={store}>{children}</Provider>;
+  return <Provider store={storeRef.current}>{children}</Provider>;
 };
