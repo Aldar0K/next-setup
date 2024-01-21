@@ -1,13 +1,10 @@
-import { makeStore } from '@/shared/store';
 import type { AppProps } from 'next/app';
-import { Provider } from 'react-redux';
+import { StoreProvider } from './providers/store-provider';
 
 export function App({ Component, pageProps }: AppProps) {
-  const store = makeStore();
-
   return (
-    <Provider store={store}>
+    <StoreProvider>
       <Component {...pageProps} />
-    </Provider>
+    </StoreProvider>
   );
 }
