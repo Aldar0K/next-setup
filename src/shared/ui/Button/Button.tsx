@@ -1,7 +1,5 @@
+import { classNames } from '@/shared/lib';
 import { ButtonHTMLAttributes, FC } from 'react';
-import { useTranslation } from 'react-i18next';
-
-import { classNames } from 'shared/lib';
 import cls from './Button.module.scss';
 
 export enum ButtonThemes {
@@ -30,15 +28,14 @@ export const Button: FC<ButtonProps> = props => {
   const {
     type = 'button',
     children,
-    theme,
+    theme = ButtonThemes.CLEAR,
     square = false,
     size = ButtonSizes.M,
-    disabled,
+    disabled = false,
     loading,
     className,
     ...otherProps
   } = props;
-  const { t } = useTranslation();
 
   return (
     <button
@@ -55,7 +52,7 @@ export const Button: FC<ButtonProps> = props => {
       data-testid='Button'
       {...otherProps}
     >
-      {loading ? t('Loading') : children}
+      {loading ? 'Загрузка...' : children}
     </button>
   );
 };

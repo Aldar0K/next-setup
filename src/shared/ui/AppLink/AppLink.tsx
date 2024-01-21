@@ -1,7 +1,7 @@
+import { classNames } from '@/shared/lib';
+import Link, { LinkProps } from 'next/link';
+import { useRouter } from 'next/router';
 import { FC, ReactNode } from 'react';
-import { Link, LinkProps } from 'react-router-dom';
-
-import { classNames } from 'shared/lib';
 import cls from './AppLink.module.scss';
 
 export enum AppLinkThemes {
@@ -13,15 +13,30 @@ type AppLinkProps = LinkProps & {
   theme?: AppLinkThemes;
   children: ReactNode;
   className?: string;
+  activeClassName?: string;
 };
 
 export const AppLink: FC<AppLinkProps> = props => {
-  const { to, theme = AppLinkThemes.PRIMARY, children, className, ...otherProps } = props;
+  const {
+    href,
+    theme = AppLinkThemes.PRIMARY,
+    children,
+    className,
+    activeClassName,
+    ...otherProps
+  } = props;
+  const { asPath, isReady } = useRouter();
 
   return (
     <Link
-      to={to}
-      className={classNames(cls.container, {}, [cls[theme], className])}
+      href={href}
+      className={classNames(
+        cls.container,
+        {
+          [cls.active]: isReady && asPath === href
+        },
+        [cls[theme], className]
+      )}
       data-testid='AppLink'
       {...otherProps}
     >

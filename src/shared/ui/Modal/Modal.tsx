@@ -1,9 +1,9 @@
+'use client';
+
+import IconClose from '@/shared/assets/icons/close.svg';
+import { classNames } from '@/shared/lib';
 import { Dialog, Transition } from '@headlessui/react';
 import { FC, Fragment, ReactNode } from 'react';
-
-import { useTheme } from 'app/providers/ThemeProvider';
-import IconClose from 'shared/assets/icons/close.svg';
-import { classNames } from 'shared/lib';
 import cls from './Modal.module.scss';
 
 type ModalProps = {
@@ -17,14 +17,13 @@ type ModalProps = {
 
 export const Modal: FC<ModalProps> = props => {
   const { children, isOpen, onClose, title, description, className } = props;
-  const { theme } = useTheme();
 
   return (
     <Transition as={Fragment} appear show={isOpen}>
       <Dialog
         as='div'
         onClose={onClose}
-        className={classNames(cls.container, {}, [theme])}
+        className={classNames(cls.container, {}, [])}
         data-testid='Modal'
       >
         <Transition.Child

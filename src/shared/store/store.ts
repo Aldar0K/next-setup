@@ -1,11 +1,15 @@
 import { counterSlice } from '@/entities/counter';
+import { userSlice } from '@/entities/user';
+import { loginByUsernameSlice } from '@/features/user/login-by-username';
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      counter: counterSlice.reducer
+      [counterSlice.reducerPath]: counterSlice.reducer,
+      [userSlice.reducerPath]: userSlice.reducer,
+      [loginByUsernameSlice.reducerPath]: loginByUsernameSlice.reducer
     },
     devTools: true
   });
