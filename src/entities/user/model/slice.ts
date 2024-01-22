@@ -10,7 +10,7 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    initAuthData: (state) => {
+    initAuthData: state => {
       const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
       if (user) {
         state.authData = JSON.parse(user);
@@ -22,6 +22,8 @@ export const userSlice = createSlice({
     logout(state) {
       state.authData = undefined;
       localStorage.removeItem(USER_LOCALSTORAGE_KEY);
-    },
-  },
+    }
+  }
 });
+
+export const { actions: userActions, reducer: userReducer } = userSlice;

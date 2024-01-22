@@ -36,3 +36,6 @@ export const loginByUsernameSlice = createSlice({
       });
   }
 });
+
+export const { actions: loginByUsernameActions, reducer: loginByUsernameReducer } =
+  loginByUsernameSlice;

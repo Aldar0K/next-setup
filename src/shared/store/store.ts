@@ -20,4 +20,5 @@ export type StateSchema = ReturnType<AppStore['getState']>;
 export type AppDispatch = AppStore['dispatch'];
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, StateSchema, unknown, Action>;
 
+// no use
 export const wrapper = createWrapper<AppStore>(makeStore);

@@ -7,7 +7,7 @@ import { getIsLoading } from '../../model/selectors/getIsLoading';
 import { getPassword } from '../../model/selectors/getPassword';
 import { getUsername } from '../../model/selectors/getUsername';
 import { loginByUsername } from '../../model/services/loginByUsername';
-import { loginByUsernameSlice } from '../../model/slice';
+import { loginByUsernameActions } from '../../model/slice';
 import cls from './LoginForm.module.scss';
 
 export type LoginFormProps = {
@@ -24,14 +24,14 @@ export const LoginForm = (props: LoginFormProps) => {
 
   const handleUsernameChange = useCallback(
     (value: string) => {
-      dispatch(loginByUsernameSlice.actions.setUsername(value));
+      dispatch(loginByUsernameActions.setUsername(value));
     },
     [dispatch]
   );
 
   const handlePasswordChange = useCallback(
     (value: string) => {
-      dispatch(loginByUsernameSlice.actions.setPassword(value));
+      dispatch(loginByUsernameActions.setPassword(value));
     },
     [dispatch]
   );
