@@ -1,6 +1,5 @@
 'use client';
 
-import IconClose from '@/shared/assets/icons/close.svg';
 import { classNames } from '@/shared/lib';
 import { Dialog, Transition } from '@headlessui/react';
 import { FC, Fragment, ReactNode } from 'react';
@@ -64,9 +63,9 @@ export const Modal: FC<ModalProps> = props => {
 
                 {children}
 
-                <button onClick={onClose} className={cls['button-close']}>
+                {/* <button onClick={onClose} className={cls['button-close']}>
                   <IconClose className={cls['icon-close']} />
-                </button>
+                </button> */}
               </Dialog.Panel>
             </Transition.Child>
           </div>
