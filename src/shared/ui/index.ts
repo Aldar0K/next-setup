@@ -4,3 +4,6 @@ export { Input } from './input';
 export { Loader } from './loader';
 export { Modal } from './modal';
 export { Text } from './text';
+
+export { IconThemeDark } from './icons/IconThemeDark';
+export { IconThemeLight } from './icons/IconThemeLight';

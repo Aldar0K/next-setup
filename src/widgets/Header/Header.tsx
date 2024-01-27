@@ -1,6 +1,7 @@
 'use client';
 
 import { getUserAuthData, userSlice } from '@/entities/user';
+import { ThemeSwitcher } from '@/features/switch-theme';
 import { LoginModal } from '@/features/user/login-by-username';
 import { useAppDispatch, useAppSelector } from '@/shared/store';
 import { Button, ButtonThemes } from '@/shared/ui';
@@ -36,6 +37,8 @@ export const Header: FC = () => {
             Войти
           </Button>
         )}
+
+        <ThemeSwitcher />
       </header>
 
       <LoginModal isOpen={isAuthModalOpen} onClose={closeAuthModal} />

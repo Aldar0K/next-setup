@@ -3,14 +3,10 @@ body {
   font: var(--font-m);
 }
 
-.app {
+#__next {
   min-height: 100vh;
 
   background: var(--color-bg);
-}
-
-.app__content {
-  display: flex;
 }
 
 .page-wrapper {

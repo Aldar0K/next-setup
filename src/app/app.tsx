@@ -4,6 +4,7 @@ import { useAppDispatch } from '@/shared/store';
 import '@/shared/styles/main.scss';
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
+import { ThemeProvider } from './providers/theme-provider';
 import { StoreProvider } from './providers/store-provider';
 
 function App({ Component, pageProps }: AppProps) {
@@ -30,7 +31,9 @@ function App({ Component, pageProps }: AppProps) {
 function AppWithProviders({ ...props }: AppProps) {
   return (
     <StoreProvider>
-      <App {...props} />
+      <ThemeProvider>
+        <App {...props} />
+      </ThemeProvider>
     </StoreProvider>
   );
 }
