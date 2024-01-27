@@ -1,6 +1,6 @@
-export { AppLink, AppLinkThemes } from './AppLink';
-export { Button, ButtonSizes, ButtonThemes } from './Button';
-export { Input } from './Input';
-export { Loader } from './Loader';
-export { Modal } from './Modal';
-export { Text } from './Text';
+export { AppLink, AppLinkThemes } from './app-link';
+export { Button, ButtonSizes, ButtonThemes } from './button';
+export { Input } from './input';
+export { Loader } from './loader';
+export { Modal } from './modal';
+export { Text } from './text';
