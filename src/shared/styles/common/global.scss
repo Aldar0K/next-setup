@@ -1,20 +1,60 @@
+html {
+  font-size: 1em;
+
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--color-primary);
   font: var(--font-m);
 }
 
-#__next {
-  min-height: 100vh;
+.wrapper {
+  display: flex;
+  flex-direction: column;
 
-  background: var(--color-bg);
+  height: 100vh;
 }
 
-.page-wrapper {
+.content {
+  display: flex;
+
   flex-grow: 1;
-  padding: var(--padding-m);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+
+  width: 100%;
+  max-width: 1200px;
 }
 
 .hidden {
   display: none;
   visibility: hidden;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+
+  appearance: none;
+}
+
+/* Firefox */
+input[type='number'] {
+  appearance: textfield;
+}
+
+button {
+  background: none;
 }
