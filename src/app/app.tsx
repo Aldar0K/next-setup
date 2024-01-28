@@ -4,8 +4,9 @@ import { useAppDispatch } from '@/shared/store';
 import '@/shared/styles/main.scss';
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
+import { ErrorBoundary } from './providers/error-boundary';
+import { StoreProvider } from './providers/store-provider/StoreProvider';
 import { ThemeProvider } from './providers/theme-provider';
-import { StoreProvider } from './providers/store-provider';
 
 function App({ Component, pageProps }: AppProps) {
   const dispatch = useAppDispatch();
@@ -30,11 +31,13 @@ function App({ Component, pageProps }: AppProps) {
 
 function AppWithProviders({ ...props }: AppProps) {
   return (
-    <StoreProvider>
-      <ThemeProvider>
-        <App {...props} />
-      </ThemeProvider>
-    </StoreProvider>
+    <ErrorBoundary>
+      <StoreProvider>
+        <ThemeProvider>
+          <App {...props} />
+        </ThemeProvider>
+      </StoreProvider>
+    </ErrorBoundary>
   );
 }
 

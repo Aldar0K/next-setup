@@ -1,8 +1,7 @@
-import { FC } from 'react';
-
 import { AppThemes, useTheme } from '@/app/providers/theme-provider';
 import { classNames } from '@/shared/lib';
 import { Button, ButtonThemes, IconThemeDark, IconThemeLight } from '@/shared/ui';
+import { FC } from 'react';
 
 type ThemeSwitcherProps = {
   className?: string;
