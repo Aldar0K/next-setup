@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const AboutPage: FC = () => {
   return (
-    <main className='main bg-white'>
+    <main className='main'>
       <h2>AboutPage</h2>
     </main>
   );
