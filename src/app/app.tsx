@@ -18,6 +18,7 @@ function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setMounted(true);
     dispatch(userActions.initAuthData());
+    // eslint-disable-next-line
   }, []);
 
   if (!mounted) {

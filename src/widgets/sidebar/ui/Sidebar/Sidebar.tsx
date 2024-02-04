@@ -1,5 +1,4 @@
 import { ThemeSwitcher } from '@/features/switch-theme';
-import { RoutePath } from '@/shared/config/routeConfig';
 import { classNames } from '@/shared/lib';
 import {
   AppLink,
@@ -44,12 +43,12 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       </Button>
 
       <div className={classNames(cls.links)}>
-        <AppLink theme={AppLinkThemes.SECONDARY} href={RoutePath.main} className={cls.link}>
+        <AppLink theme={AppLinkThemes.SECONDARY} href={'/'} className={cls.link}>
           <IconMain className={cls.link__icon} />
           <span className={cls.link__text}>Главная</span>
         </AppLink>
 
-        <AppLink theme={AppLinkThemes.SECONDARY} href={RoutePath.about} className={cls.link}>
+        <AppLink theme={AppLinkThemes.SECONDARY} href={'/about'} className={cls.link}>
           <IconAbout className={cls.link__icon} />
           <span className={cls.link__text}>О нас</span>
         </AppLink>

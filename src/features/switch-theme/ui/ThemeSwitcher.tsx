@@ -1,3 +1,5 @@
+'use client';
+
 import { AppThemes, useTheme } from '@/app/providers/theme-provider';
 import { classNames } from '@/shared/lib';
 import { Button, ButtonThemes, IconThemeDark, IconThemeLight, Loader } from '@/shared/ui';
