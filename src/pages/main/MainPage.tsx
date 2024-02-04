@@ -1,9 +1,9 @@
 import { Counter } from '@/entities/counter';
 
-export function HomePage() {
+export function MainPage() {
   return (
     <main className='main'>
-      <h2>HomePage</h2>
+      <h2>MainPage</h2>
       <Counter />
     </main>
   );

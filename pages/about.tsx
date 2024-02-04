@@ -1,3 +1,3 @@
-import { AboutPage } from '@/pages/AboutPage';
+import { AboutPage } from '@/pages/about';
 
 export default AboutPage;

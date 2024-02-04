@@ -1,4 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 
 type Article = { id: string; title: string; subtitle: string };
 
@@ -23,7 +24,9 @@ export const ArticlesPage = ({ articles }: InferGetStaticPropsType<typeof getSta
   return (
     <ul>
       {articles.map(article => (
-        <li key={article.id}>{article.title}</li>
+        <li key={article.id}>
+          <Link href={`/articles/${article.id}`}>{article.title}</Link>
+        </li>
       ))}
     </ul>
   );
