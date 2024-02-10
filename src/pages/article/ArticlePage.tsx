@@ -1,3 +1,4 @@
+import { REVALIDATE_DELAY } from '@/shared/const';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 
 type Article = { id: string; title: string; subtitle: string };
@@ -32,7 +33,7 @@ export const getStaticProps = (async context => {
 
   return {
     props: { article },
-    revalidate: 10
+    revalidate: REVALIDATE_DELAY
   };
 }) satisfies GetStaticProps<{
   article: Article;

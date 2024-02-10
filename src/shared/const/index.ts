@@ -1,1 +1,2 @@
-export { USER_LOCALSTORAGE_KEY } from './localstorage';
+export * from './local-storage';
+export * from './revalidate';

@@ -1,3 +1,4 @@
+import { REVALIDATE_DELAY } from '@/shared/const';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 
@@ -16,7 +17,7 @@ export const getStaticProps = (async context => {
     props: {
       articles
     },
-    revalidate: 10
+    revalidate: REVALIDATE_DELAY
   };
 }) satisfies GetStaticProps;
 
