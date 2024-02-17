@@ -1,10 +1,11 @@
+import { baseUrl } from '@/shared/api';
 import { REVALIDATE_DELAY } from '@/shared/const';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 
 type Article = { id: string; title: string; subtitle: string };
 
 export const getStaticPaths = (async context => {
-  const response = await fetch('http://localhost:8000/articles', {
+  const response = await fetch(`${baseUrl}/articles`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: 'Bearer'
@@ -23,7 +24,7 @@ export const getStaticPaths = (async context => {
 }) satisfies GetStaticPaths;
 
 export const getStaticProps = (async context => {
-  const response = await fetch(`http://localhost:8000/articles/${context.params?.id}`, {
+  const response = await fetch(`${baseUrl}/articles/${context.params?.id}`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: 'Bearer'

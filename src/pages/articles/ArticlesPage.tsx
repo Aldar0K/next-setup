@@ -1,3 +1,4 @@
+import { baseUrl } from '@/shared/api';
 import { REVALIDATE_DELAY } from '@/shared/const';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
@@ -5,7 +6,7 @@ import Link from 'next/link';
 type Article = { id: string; title: string; subtitle: string };
 
 export const getStaticProps = (async context => {
-  const response = await fetch('http://localhost:8000/articles', {
+  const response = await fetch(`${baseUrl}/articles`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: 'Bearer'
