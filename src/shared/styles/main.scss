@@ -1,0 +1,13 @@
+// common
+@import './common/reset';
+@import './common/global';
+
+// variables
+@import './variables/variables';
+
+// themes
+@import 'themes/light';
+@import 'themes/dark';
+
+// libraries
+@import 'libraries/tailwind.scss';
