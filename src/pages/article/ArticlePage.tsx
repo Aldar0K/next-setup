@@ -50,14 +50,14 @@ export const ArticlePage = ({ article }: InferGetStaticPropsType<typeof getStati
         openGraph={{
           title: article.title,
           description: article.subtitle,
-          url: `https://next-setup-28vt8bo2w-aldar0k.vercel.app/articles/${article.id}`,
+          url: `https://next-setup-seven.vercel.app/articles/${article.id}`,
           type: 'article',
           article: { tags: [article.title], publishedTime: new Date().toISOString() }
         }}
       />
       <ArticleJsonLd
         type='Article'
-        url={`https://next-setup-28vt8bo2w-aldar0k.vercel.app/articles/${article.id}`}
+        url={`https://next-setup-seven.vercel.app/articles/${article.id}`}
         title={article.title}
         description={article.subtitle}
         images={[]}

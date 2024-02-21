@@ -32,7 +32,7 @@ export const ArticlesPage = ({ articles }: InferGetStaticPropsType<typeof getSta
         openGraph={{
           title: 'Articles',
           description: 'Articles page',
-          url: `https://next-setup-28vt8bo2w-aldar0k.vercel.app/articles`,
+          url: `https://next-setup-seven.vercel.app/articles`,
           article: {
             tags: ['articles', ...articles.map(article => article.title)],
             publishedTime: new Date().toISOString()
