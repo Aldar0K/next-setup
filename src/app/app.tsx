@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib';
 import { useAppDispatch } from '@/shared/store';
 import '@/shared/styles/main.scss';
 import { Header, PageLoader, Sidebar } from '@/widgets';
+import { NextSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import { ErrorBoundary } from './providers/error-boundary';
@@ -34,6 +35,12 @@ function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
+
+      <NextSeo
+        title='Next Setup (Aldar)'
+        description='Next app setup with pages router (Aldar)'
+        canonical='https://next-setup-seven.vercel.app'
+      />
 
       <Header />
       <div className='content'>
