@@ -34,8 +34,9 @@ export const ArticlesPage = ({ articles }: InferGetStaticPropsType<typeof getSta
           title: 'Articles',
           description: 'Articles page',
           url: `https://next-setup-seven.vercel.app/articles`,
+          type: 'article',
           article: {
-            tags: ['articles'],
+            tags: ['articles', ...articles.map(article => article.title)],
             publishedTime: new Date().toISOString()
           }
         }}
