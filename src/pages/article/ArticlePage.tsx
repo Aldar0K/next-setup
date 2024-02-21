@@ -45,6 +45,8 @@ export const ArticlePage = ({ article }: InferGetStaticPropsType<typeof getStati
   return (
     <>
       <NextSeo
+        title={article.title}
+        description={article.subtitle}
         openGraph={{
           title: article.title,
           description: article.subtitle,
@@ -62,8 +64,10 @@ export const ArticlePage = ({ article }: InferGetStaticPropsType<typeof getStati
         datePublished={new Date().toISOString()}
         authorName={undefined}
       />
-      <h2>{article.title}</h2>
-      <p>{article.subtitle}</p>
+      <div className='flex flex-col gap-[15px]'>
+        <h2>{article.title}</h2>
+        <p>{article.subtitle}</p>
+      </div>
     </>
   );
 };
