@@ -29,12 +29,13 @@ export const ArticlesPage = ({ articles }: InferGetStaticPropsType<typeof getSta
       <NextSeo
         title='Articles'
         description='Articles page'
+        canonical={`https://next-setup-seven.vercel.app/articles`}
         openGraph={{
           title: 'Articles',
           description: 'Articles page',
           url: `https://next-setup-seven.vercel.app/articles`,
           article: {
-            tags: ['articles', ...articles.map(article => article.title)],
+            tags: ['articles'],
             publishedTime: new Date().toISOString()
           }
         }}

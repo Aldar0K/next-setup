@@ -47,6 +47,7 @@ export const ArticlePage = ({ article }: InferGetStaticPropsType<typeof getStati
       <NextSeo
         title={article.title}
         description={article.subtitle}
+        canonical={`https://next-setup-seven.vercel.app/articles/${article.id}`}
         openGraph={{
           title: article.title,
           description: article.subtitle,
