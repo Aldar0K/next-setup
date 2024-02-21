@@ -1,6 +1,7 @@
 import { baseUrl } from '@/shared/api';
 import { REVALIDATE_DELAY } from '@/shared/const';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 
 type Article = { id: string; title: string; subtitle: string };
@@ -24,12 +25,28 @@ export const getStaticProps = (async context => {
 
 export const ArticlesPage = ({ articles }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <ul>
-      {articles.map(article => (
-        <li key={article.id}>
-          <Link href={`/articles/${article.id}`}>{article.title}</Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      <NextSeo
+        title='Articles'
+        description='Articles page'
+        openGraph={{
+          title: 'Articles',
+          description: 'Articles page',
+          url: `https://next-setup-28vt8bo2w-aldar0k.vercel.app/articles`,
+          article: {
+            tags: ['articles', ...articles.map(article => article.title)],
+            publishedTime: new Date().toISOString()
+          }
+        }}
+      />
+
+      <ul className='flex flex-col gap-[10px]'>
+        {articles.map(article => (
+          <li key={article.id}>
+            <Link href={`/articles/${article.id}`}>{article.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };

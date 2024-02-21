@@ -1,6 +1,7 @@
 import { baseUrl } from '@/shared/api';
 import { REVALIDATE_DELAY } from '@/shared/const';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+import { ArticleJsonLd, NextSeo } from 'next-seo';
 
 type Article = { id: string; title: string; subtitle: string };
 
@@ -41,5 +42,28 @@ export const getStaticProps = (async context => {
 }>;
 
 export const ArticlePage = ({ article }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <div>{article.title}</div>;
+  return (
+    <>
+      <NextSeo
+        openGraph={{
+          title: article.title,
+          description: article.subtitle,
+          url: `https://next-setup-28vt8bo2w-aldar0k.vercel.app/articles/${article.id}`,
+          type: 'article',
+          article: { tags: [article.title], publishedTime: new Date().toISOString() }
+        }}
+      />
+      <ArticleJsonLd
+        type='Article'
+        url={`https://next-setup-28vt8bo2w-aldar0k.vercel.app/articles/${article.id}`}
+        title={article.title}
+        description={article.subtitle}
+        images={[]}
+        datePublished={new Date().toISOString()}
+        authorName={undefined}
+      />
+      <h2>{article.title}</h2>
+      <p>{article.subtitle}</p>
+    </>
+  );
 };
