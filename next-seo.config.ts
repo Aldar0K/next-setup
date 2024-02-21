@@ -13,9 +13,9 @@ const config: DefaultSeoProps = {
   openGraph: {
     type: 'website',
     locale: 'ru',
+    siteName: 'Next Setup (Aldar)',
     url: 'https://next-setup-28vt8bo2w-aldar0k.vercel.app',
     title: 'Next Setup (Aldar)',
-    siteName: 'Next Setup (Aldar)',
     description: 'Next app setup with pages router',
     images: [
       {
