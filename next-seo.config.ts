@@ -7,7 +7,7 @@ const config: DefaultSeoProps = {
   additionalLinkTags: [
     {
       rel: 'icon',
-      href: '/favicon.ico'
+      href: 'https://static-00.iconduck.com/assets.00/nextjs-icon-512x512-11yvtwzn.png'
     }
   ],
   openGraph: {
