@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 import { ErrorBoundary } from './providers/error-boundary';
 import { StoreProvider } from './providers/store-provider/StoreProvider';
 import { ThemeProvider, useTheme } from './providers/theme-provider';
-// import SEO from '../../next-seo.config';
+import SEO from '../../next-seo.config';
 
 function App({ Component, pageProps }: AppProps) {
   const dispatch = useAppDispatch();
@@ -39,11 +39,11 @@ function App({ Component, pageProps }: AppProps) {
 
       <Analytics />
 
-      <NextSeo
+      {/* <NextSeo
         title='Next Setup (Aldar)'
         description='Next app setup with pages router (Aldar)'
         canonical='https://next-setup-seven.vercel.app'
-      />
+      /> */}
 
       <Header />
       <div className='content'>
