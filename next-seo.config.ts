@@ -7,7 +7,7 @@ const config: DefaultSeoProps = {
   additionalLinkTags: [
     {
       rel: 'manifest',
-      href: '/meta/site.webmanifest'
+      href: '/public/manifest.ts'
     }
   ],
   openGraph: {
