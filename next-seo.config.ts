@@ -18,6 +18,35 @@ const config: DefaultSeoProps = {
     {
       rel: 'manifest',
       href: '/site.webmanifest'
+    },
+    {
+      rel: 'browserconfig',
+      href: '/browserconfig.xml'
+    },
+    {
+      rel: 'apple-touch-icon',
+      href: '/apple-touch-icon.png'
+    },
+    {
+      rel: 'mask-icon',
+      href: '/safari-pinned-tab.svg',
+      color: '#000000'
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/favicon-16x16.png'
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/favicon-32x32.png'
+    },
+    {
+      rel: 'robots',
+      href: '/robots.txt'
     }
   ],
   openGraph: {
