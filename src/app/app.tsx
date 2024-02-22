@@ -21,7 +21,7 @@ function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setMounted(true);
     dispatch(userActions.initAuthData());
-  }, []);
+  }, [dispatch]);
 
   if (!mounted) {
     return <PageLoader />;
