@@ -4,10 +4,20 @@ const config: DefaultSeoProps = {
   defaultTitle: 'Next Setup (Aldar)',
   description: 'Next app setup with pages router (Aldar)',
   canonical: 'https://next-setup-seven.vercel.app',
+  additionalMetaTags: [
+    {
+      name: 'keywords',
+      content: 'next, setup, pages, router'
+    }
+  ],
   additionalLinkTags: [
     {
       rel: 'icon',
       href: 'https://static-00.iconduck.com/assets.00/nextjs-icon-512x512-11yvtwzn.png'
+    },
+    {
+      rel: 'manifest',
+      href: '/site.webmanifest'
     }
   ],
   openGraph: {
@@ -33,7 +43,8 @@ const config: DefaultSeoProps = {
   },
   facebook: {
     appId: 'your-app-id'
-  }
+  },
+  themeColor: '#ffffff'
 };
 
 export default config;
