@@ -39,12 +39,6 @@ function App({ Component, pageProps }: AppProps) {
 
       <Analytics />
 
-      {/* <NextSeo
-        title='Next Setup (Aldar)'
-        description='Next app setup with pages router (Aldar)'
-        canonical='https://next-setup-seven.vercel.app'
-      /> */}
-
       <DefaultSeo {...SEO} />
 
       <Header />
