@@ -7,7 +7,12 @@ const config: DefaultSeoProps = {
   additionalLinkTags: [
     {
       rel: 'manifest',
-      href: '/site.webmanifest'
+      href: 'site.webmanifest'
+    },
+    {
+      rel: 'icon',
+      href: 'favicon.ico',
+      type: 'image/x-icon'
     }
   ],
   openGraph: {
