@@ -5,13 +5,13 @@ import { useAppDispatch } from '@/shared/store';
 import '@/shared/styles/main.scss';
 import { Header, PageLoader, Sidebar } from '@/widgets';
 import { Analytics } from '@vercel/analytics/react';
-import { NextSeo } from 'next-seo';
+import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
+import SEO from '../../next-seo.config';
 import { ErrorBoundary } from './providers/error-boundary';
 import { StoreProvider } from './providers/store-provider/StoreProvider';
 import { ThemeProvider, useTheme } from './providers/theme-provider';
-import SEO from '../../next-seo.config';
 
 function App({ Component, pageProps }: AppProps) {
   const dispatch = useAppDispatch();
@@ -44,6 +44,8 @@ function App({ Component, pageProps }: AppProps) {
         description='Next app setup with pages router (Aldar)'
         canonical='https://next-setup-seven.vercel.app'
       /> */}
+
+      <DefaultSeo {...SEO} />
 
       <Header />
       <div className='content'>
