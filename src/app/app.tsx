@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib';
 import { useAppDispatch } from '@/shared/store';
 import '@/shared/styles/main.scss';
 import { Header, PageLoader, Sidebar } from '@/widgets';
+import { Analytics } from '@vercel/analytics/react';
 import { NextSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
@@ -19,7 +20,6 @@ function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setMounted(true);
     dispatch(userActions.initAuthData());
-    // eslint-disable-next-line
   }, []);
 
   if (!mounted) {
@@ -35,6 +35,8 @@ function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
+
+      <Analytics />
 
       <NextSeo
         title='Next Setup (Aldar)'
