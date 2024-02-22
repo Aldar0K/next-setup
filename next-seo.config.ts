@@ -6,12 +6,8 @@ const config: DefaultSeoProps = {
   canonical: 'https://next-setup-seven.vercel.app',
   additionalLinkTags: [
     {
-      rel: 'icon',
-      href: 'favicon.ico'
-    },
-    {
       rel: 'manifest',
-      href: '/manifest.json'
+      href: '/meta/site.webmanifest'
     }
   ],
   openGraph: {
